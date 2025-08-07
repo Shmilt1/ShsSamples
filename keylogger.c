@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<windows.h>
 
+#define POLL_TIMEOUT_MS 100
+
 int main(void) 
 {
     HWND hWnd = GetForegroundWindow();
@@ -40,7 +42,7 @@ int main(void)
                 }
             }
 
-            Sleep(100);
+            Sleep(POLL_TIMEOUT_MS);
         }
 
         AttachThreadInput(GetCurrentThreadId(), tid, FALSE);
