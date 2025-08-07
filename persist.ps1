@@ -1,4 +1,4 @@
-$payload = "V3JpdGUtSG9zdCBoaSE=" # Write-Host hi!
+$payload = "VwByAGkAdABlAC0ASABvAHMAdAAgAGgAaQAhAA==" # Write-Host hi!
 
 $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -EncodedCommand %payload"
 $trigger = New-ScheduledTaskTrigger -AtLogOn
