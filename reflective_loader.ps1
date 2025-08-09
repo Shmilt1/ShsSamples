@@ -5,7 +5,7 @@ $asm = [System.Reflection.Assembly]::Load($bytes)
 $entrypoint = $asm.EntryPoint
 $params = @()
 if ($entrypoint.GetParameters().Length -gt 0) {
-  $params = ,@(@())
+  $params = ,@([string[]]@())
 }
 
 $instance = $null
