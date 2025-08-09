@@ -1,4 +1,5 @@
-$payload = "<SOME_BASE64_ENCODED_DOTNET_ASSEMBLY>"
+$contents = [System.IO.File]::ReadAllBytes("<SOME_ASSEMBLY>")
+$payload = [System.Convert]::ToBase64String($contents)
 $bytes = [System.Convert]::FromBase64String($payload)
 $asm = [System.Reflection.Assembly]::Load($bytes)
 $entrypoint = $asm.EntryPoint
