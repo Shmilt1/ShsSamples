@@ -1,6 +1,4 @@
-$contents = [System.IO.File]::ReadAllBytes("<SOME_ASSEMBLY>")
-$payload = [System.Convert]::ToBase64String($contents)
-$bytes = [System.Convert]::FromBase64String($payload)
+$bytes = [System.IO.File]::ReadAllBytes("<SOME_ASSEMBLY>")
 $asm = [System.Reflection.Assembly]::Load($bytes)
 $entrypoint = $asm.EntryPoint
 $params = @()
